@@ -5,15 +5,19 @@
   
 
   
-  <title>豆爸杂货铺</title>
+  <title>Mysql索引的一些事情 | 豆爸杂货铺</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="豆爸杂货铺">
-<meta property="og:url" content="https://miketam.github.io/myblog/index.html">
+  <meta name="description" content="索引是用来加速查询结果的.不实用索引会导致扫描整张表数据. Mysql的索引类型 primary key unique index fullTEXT  大多数索引都是B-trees结构, 也有一部分是空间数据类型使用R-trees;memory表支持hash索引;InnoDB使用inverted list做为fulltext索引; InnoDB是使用B+ tree 支持操作 where条件快速匹配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql索引的一些事情">
+<meta property="og:url" content="https://miketam.github.io/myblog/2019/05/31/Mysql索引的一些事情/index.html">
 <meta property="og:site_name" content="豆爸杂货铺">
+<meta property="og:description" content="索引是用来加速查询结果的.不实用索引会导致扫描整张表数据. Mysql的索引类型 primary key unique index fullTEXT  大多数索引都是B-trees结构, 也有一部分是空间数据类型使用R-trees;memory表支持hash索引;InnoDB使用inverted list做为fulltext索引; InnoDB是使用B+ tree 支持操作 where条件快速匹配">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T15:19:25.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="豆爸杂货铺">
+<meta name="twitter:title" content="Mysql索引的一些事情">
+<meta name="twitter:description" content="索引是用来加速查询结果的.不实用索引会导致扫描整张表数据. Mysql的索引类型 primary key unique index fullTEXT  大多数索引都是B-trees结构, 也有一部分是空间数据类型使用R-trees;memory表支持hash索引;InnoDB使用inverted list做为fulltext索引; InnoDB是使用B+ tree 支持操作 where条件快速匹配">
   
     <link rel="alternate" href="/atom.xml" title="豆爸杂货铺" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Mysql索引的一些事情" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Mysql索引的一些事情" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/31/Mysql索引的一些事情/" class="article-date">
   <time datetime="2019-05-31T15:19:05.000Z" itemprop="datePublished">2019-05-31</time>
@@ -75,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Mysql索引的一些事情/">Mysql索引的一些事情</a>
+    <h1 class="article-title" itemprop="name">
+      Mysql索引的一些事情
     </h1>
   
 
@@ -118,124 +120,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Redis底层为什么使用SkipList" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/31/Redis底层为什么使用SkipList/" class="article-date">
-  <time datetime="2019-05-31T15:14:02.000Z" itemprop="datePublished">2019-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Redis底层为什么使用SkipList/">Redis底层为什么使用SkipList</a>
-    </h1>
+    <a href="/2019/05/31/Redis底层为什么使用SkipList/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Redis底层为什么使用SkipList</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>开发者是这样回答的:</p>
-<ul>
-<li>skip-list更加节省内存</li>
-<li>对于Sorted set来说大部分都是调用zrange或者zrevrange操作,那么操作skip-list就像一个linked-list.对于这些操作来说skip-list跟其他类型平衡树效率是一样的</li>
-<li>skip-list跟家容易实现、debug等等.</li>
-</ul>
-<h3 id="为什么使用多线程"><a href="#为什么使用多线程" class="headerlink" title="为什么使用多线程?"></a>为什么使用多线程?</h3><p>根据开发者自己的经验,redis的瓶颈主要在I/O方面. redis通过虚拟内存使用多线程提供服务.以后为了利用多核,可以每个核上运行一个redis实例.</p>
-<h3 id="skip-list"><a href="#skip-list" class="headerlink" title="skip-list"></a>skip-list</h3><p>insert复杂度是O(logN), search复杂度是O(logN)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miketam.github.io/myblog/2019/05/31/Redis底层为什么使用SkipList/" data-id="cjwc8gwgy0002zpc4hqk9120v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Java编码规范" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/31/Java编码规范/" class="article-date">
-  <time datetime="2019-05-31T06:24:03.000Z" itemprop="datePublished">2019-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Java编码规范/">Java编码规范</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="源文件"><a href="#源文件" class="headerlink" title="源文件"></a>源文件</h2><ul>
-<li>文件名是大小写敏感的</li>
-<li>编码使用UTF-8</li>
-<li>空白字符请使用空格</li>
-<li>源文件结构：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 版权声明</span><br><span class="line">2. package 语句</span><br><span class="line">3. import 语句</span><br><span class="line">4. class 定义</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>package语句不能换行</p>
-</li>
-<li><p>import语句</p>
-<ul>
-<li>无论是static还是其他导入都不要使用通配符导入形式</li>
-<li>不能换行</li>
-<li>先导入static block</li>
-<li>再导入非static block</li>
-<li>如果都有的话，那么static block和非static block之间增加一个空行</li>
-<li>不要static引入静态内部类</li>
-</ul>
-</li>
-<li><p>class定义</p>
-<ul>
-<li>一个class文件中只有一个顶级类定义</li>
-<li>class内容<ul>
-<li>重载的方法不要分开</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>格式</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miketam.github.io/myblog/2019/05/31/Java编码规范/" data-id="cjwc8gwgk0001zpc4vme4u5zm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
