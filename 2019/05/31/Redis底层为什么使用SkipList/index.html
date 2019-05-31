@@ -5,15 +5,19 @@
   
 
   
-  <title>豆爸杂货铺</title>
+  <title>Redis底层为什么使用SkipList | 豆爸杂货铺</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="豆爸杂货铺">
-<meta property="og:url" content="https://miketam.github.io/myblog/index.html">
+  <meta name="description" content="开发者是这样回答的:  skip-list更加节省内存 对于Sorted set来说大部分都是调用zrange或者zrevrange操作,那么操作skip-list就像一个linked-list.对于这些操作来说skip-list跟其他类型平衡树效率是一样的 skip-list跟家容易实现、debug等等.  为什么使用多线程?根据开发者自己的经验,redis的瓶颈主要在I/O方面. redis通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis底层为什么使用SkipList">
+<meta property="og:url" content="https://miketam.github.io/myblog/2019/05/31/Redis底层为什么使用SkipList/index.html">
 <meta property="og:site_name" content="豆爸杂货铺">
+<meta property="og:description" content="开发者是这样回答的:  skip-list更加节省内存 对于Sorted set来说大部分都是调用zrange或者zrevrange操作,那么操作skip-list就像一个linked-list.对于这些操作来说skip-list跟其他类型平衡树效率是一样的 skip-list跟家容易实现、debug等等.  为什么使用多线程?根据开发者自己的经验,redis的瓶颈主要在I/O方面. redis通">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T15:14:40.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="豆爸杂货铺">
+<meta name="twitter:title" content="Redis底层为什么使用SkipList">
+<meta name="twitter:description" content="开发者是这样回答的:  skip-list更加节省内存 对于Sorted set来说大部分都是调用zrange或者zrevrange操作,那么操作skip-list就像一个linked-list.对于这些操作来说skip-list跟其他类型平衡树效率是一样的 skip-list跟家容易实现、debug等等.  为什么使用多线程?根据开发者自己的经验,redis的瓶颈主要在I/O方面. redis通">
   
     <link rel="alternate" href="/atom.xml" title="豆爸杂货铺" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Redis底层为什么使用SkipList" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Redis底层为什么使用SkipList" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/31/Redis底层为什么使用SkipList/" class="article-date">
   <time datetime="2019-05-31T15:14:02.000Z" itemprop="datePublished">2019-05-31</time>
@@ -75,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Redis底层为什么使用SkipList/">Redis底层为什么使用SkipList</a>
+    <h1 class="article-title" itemprop="name">
+      Redis底层为什么使用SkipList
     </h1>
   
 
@@ -102,80 +104,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Java编码规范" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/31/Java编码规范/" class="article-date">
-  <time datetime="2019-05-31T06:24:03.000Z" itemprop="datePublished">2019-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Java编码规范/">Java编码规范</a>
-    </h1>
+    <a href="/2019/05/31/Java编码规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java编码规范</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="源文件"><a href="#源文件" class="headerlink" title="源文件"></a>源文件</h2><ul>
-<li>文件名是大小写敏感的</li>
-<li>编码使用UTF-8</li>
-<li>空白字符请使用空格</li>
-<li>源文件结构：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 版权声明</span><br><span class="line">2. package 语句</span><br><span class="line">3. import 语句</span><br><span class="line">4. class 定义</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>package语句不能换行</p>
-</li>
-<li><p>import语句</p>
-<ul>
-<li>无论是static还是其他导入都不要使用通配符导入形式</li>
-<li>不能换行</li>
-<li>先导入static block</li>
-<li>再导入非static block</li>
-<li>如果都有的话，那么static block和非static block之间增加一个空行</li>
-<li>不要static引入静态内部类</li>
-</ul>
-</li>
-<li><p>class定义</p>
-<ul>
-<li>一个class文件中只有一个顶级类定义</li>
-<li>class内容<ul>
-<li>重载的方法不要分开</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>格式</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miketam.github.io/myblog/2019/05/31/Java编码规范/" data-id="cjwc8e20n0000vxc46b6xww5v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         

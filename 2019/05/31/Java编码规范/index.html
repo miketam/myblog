@@ -5,15 +5,19 @@
   
 
   
-  <title>豆爸杂货铺</title>
+  <title>Java编码规范 | 豆爸杂货铺</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="豆爸杂货铺">
-<meta property="og:url" content="https://miketam.github.io/myblog/index.html">
+  <meta name="description" content="源文件 文件名是大小写敏感的 编码使用UTF-8 空白字符请使用空格 源文件结构：  12341. 版权声明2. package 语句3. import 语句4. class 定义   package语句不能换行  import语句  无论是static还是其他导入都不要使用通配符导入形式 不能换行 先导入static block 再导入非static block 如果都有的话，那么static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编码规范">
+<meta property="og:url" content="https://miketam.github.io/myblog/2019/05/31/Java编码规范/index.html">
 <meta property="og:site_name" content="豆爸杂货铺">
+<meta property="og:description" content="源文件 文件名是大小写敏感的 编码使用UTF-8 空白字符请使用空格 源文件结构：  12341. 版权声明2. package 语句3. import 语句4. class 定义   package语句不能换行  import语句  无论是static还是其他导入都不要使用通配符导入形式 不能换行 先导入static block 再导入非static block 如果都有的话，那么static">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T06:24:23.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="豆爸杂货铺">
+<meta name="twitter:title" content="Java编码规范">
+<meta name="twitter:description" content="源文件 文件名是大小写敏感的 编码使用UTF-8 空白字符请使用空格 源文件结构：  12341. 版权声明2. package 语句3. import 语句4. class 定义   package语句不能换行  import语句  无论是static还是其他导入都不要使用通配符导入形式 不能换行 先导入static block 再导入非static block 如果都有的话，那么static">
   
     <link rel="alternate" href="/atom.xml" title="豆爸杂货铺" type="application/atom+xml">
   
@@ -60,53 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Redis底层为什么使用SkipList" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/31/Redis底层为什么使用SkipList/" class="article-date">
-  <time datetime="2019-05-31T15:14:02.000Z" itemprop="datePublished">2019-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Redis底层为什么使用SkipList/">Redis底层为什么使用SkipList</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>开发者是这样回答的:</p>
-<ul>
-<li>skip-list更加节省内存</li>
-<li>对于Sorted set来说大部分都是调用zrange或者zrevrange操作,那么操作skip-list就像一个linked-list.对于这些操作来说skip-list跟其他类型平衡树效率是一样的</li>
-<li>skip-list跟家容易实现、debug等等.</li>
-</ul>
-<h3 id="为什么使用多线程"><a href="#为什么使用多线程" class="headerlink" title="为什么使用多线程?"></a>为什么使用多线程?</h3><p>根据开发者自己的经验,redis的瓶颈主要在I/O方面. redis通过虚拟内存使用多线程提供服务.以后为了利用多核,可以每个核上运行一个redis实例.</p>
-<h3 id="skip-list"><a href="#skip-list" class="headerlink" title="skip-list"></a>skip-list</h3><p>insert复杂度是O(logN), search复杂度是O(logN)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miketam.github.io/myblog/2019/05/31/Redis底层为什么使用SkipList/" data-id="cjwc8e2120001vxc4idmuhw2x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Java编码规范" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java编码规范" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/31/Java编码规范/" class="article-date">
   <time datetime="2019-05-31T06:24:03.000Z" itemprop="datePublished">2019-05-31</time>
@@ -119,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Java编码规范/">Java编码规范</a>
+    <h1 class="article-title" itemprop="name">
+      Java编码规范
     </h1>
   
 
@@ -171,11 +129,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/31/Redis底层为什么使用SkipList/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Redis底层为什么使用SkipList
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
